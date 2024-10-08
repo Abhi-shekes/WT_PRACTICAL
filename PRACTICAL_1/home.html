@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+    <div id="result">
+        <h1>Welcome!</h1>
+        <p id="name"></p>
+        <p id="email"></p>
+        <p id="phone"></p>
+        <div class="high-five">✋🏽</div>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const queries = queryString.split('&');
+
+            queries.forEach(query => {
+                const [key, value] = query.split('=');
+                params[key] = decodeURIComponent(value.replace(/\+/g, ' '));
+            });
+
+            return params;
+        }
+
+        const params = getQueryParams();
+        document.getElementById('name').innerHTML = `Hello, ${params.name || 'Friend'}!`;
+        document.getElementById('email').innerHTML = `Your Email: ${params.email || 'Not provided'}`;
+        document.getElementById('phone').innerHTML = `Your Phone Number: ${params.phone || 'Not provided'}`;
+    </script>
+</body>
+</html>
