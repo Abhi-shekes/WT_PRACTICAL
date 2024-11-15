@@ -1,0 +1,23 @@
+|-- .env
+|-- .gitignore
+|-- config
+    |-- db.js
+|-- controllers
+    |-- orderController.js
+    |-- userController.js
+|-- package-lock.json
+|-- package.json
+|-- public
+    |-- css
+        |-- style.css
+    |-- images
+    |-- js
+        |-- script.js
+|-- server.js
+|-- views
+    |-- cart.html
+    |-- login.html
+    |-- menu.html
+    |-- order.html
+    |-- order_confirmation.html
+    |-- signup.html
