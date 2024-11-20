@@ -3,6 +3,8 @@
 |-- config
     |-- db.js
 |-- controllers
+    |-- cartController.js
+    |-- menuController.js
     |-- orderController.js
     |-- userController.js
 |-- package-lock.json
@@ -10,14 +12,14 @@
 |-- public
     |-- css
         |-- style.css
-    |-- images
     |-- js
-        |-- script.js
+        |-- loginSript.js
+        |-- menuScript.js
+        |-- orderScript.js
+        |-- signupScript.js
 |-- server.js
 |-- views
-    |-- cart.html
-    |-- login.html
-    |-- menu.html
-    |-- order.html
-    |-- order_confirmation.html
-    |-- signup.html
+    |-- cartPage.html
+    |-- loginPage.html
+    |-- menuPage.html
+    |-- signupPage.html
