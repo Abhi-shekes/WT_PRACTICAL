@@ -1,0 +1,103 @@
+|-- Portfolio
+    |-- index.html
+    |-- static
+        |-- ASSET
+            |-- ICONS
+                |-- Address_icon.png
+                |-- App development icon-removebg-preview.jpg
+                |-- Computer Vision Icon-removebg-preview.jpg
+                |-- Email_icon.png
+                |-- Github_icon.png
+                |-- RESUME.png
+                |-- UI design icon-removebg-preview.jpg
+                |-- UIdeign_what_I_do-removebg-preview.png
+                |-- Web Development icon-removebg-preview.jpg
+                |-- computer vision.jpeg
+                |-- computer_vision_what_i_do.png
+                |-- favicon.png
+                |-- linkdlen_icon.png
+                |-- phone_no_icon.jpg
+                |-- profile_image1.png
+                |-- profile_image2.jpg
+                |-- web_development_what_i_do-removebg-preview.png
+                |-- website.jpg
+            |-- IMAGE
+                |-- background_me.png
+                |-- background_me_with_bg.jpeg
+            |-- PROJECT
+                |-- ANPR.jpg
+                |-- ATM_Project.jpg
+                |-- Fire, Smoke_08-07-2023_23_28_08.jpg
+                |-- Mobile_travelling.jpg
+                |-- Mobile_travelling1.jpg
+                |-- No Helmet & No Vest_24-06-2023_15_25_33.jpg
+                |-- No Safety Shoe_24-06-2023_15_49_26.jpg
+                |-- certificate_ui.jpg
+                |-- contact_ui.jpg
+                |-- education_ui.jpg
+                |-- home_UI.jpg
+                |-- intern_ui.jpg
+                |-- portfolio_UI.jpg
+                |-- project_ui.jpg
+            |-- RESUME
+                |-- Resume_With_Intern.pdf
+        |-- STYLE
+            |-- Home_About_me.css
+            |-- Home_Testimony.css
+            |-- Home_programming_lang.css
+            |-- Home_what_I_Do.css
+            |-- contactstyle.css
+            |-- educationstyle.css
+            |-- footer.css
+            |-- internship.css
+            |-- nav_bar.css
+            |-- projectstyle.css
+        |-- education_certificate.js
+    |-- templates
+        |-- Contact.html
+        |-- Education.html
+        |-- Internship.html
+        |-- Project.html
+|-- README.md
+|-- form
+    |-- home.css
+    |-- home.html
+    |-- hritik.jpg
+    |-- index.html
+    |-- profile.jpeg
+    |-- styles.css
+    |-- validation.js
+|-- resturant
+    |-- backend
+        |-- .env
+        |-- config
+            |-- database.js
+        |-- package-lock.json
+        |-- package.json
+        |-- server.js
+    |-- frontend
+        |-- login.html
+        |-- signup.html
+        |-- styles.css
+|-- static_website
+    |-- images
+        |-- 1.jpg
+        |-- 10.jpg
+        |-- 11.jpg
+        |-- 12.jpg
+        |-- 13.jpg
+        |-- 14.jpg
+        |-- 15.jpg
+        |-- 16.jpg
+        |-- 17.jpg
+        |-- 2.jpg
+        |-- 3.jpg
+        |-- 4.jpg
+        |-- 5.jpg
+        |-- 6.jpg
+        |-- 7.jpg
+        |-- 8.jpg
+        |-- 9.jpg
+    |-- index.html
+    |-- realme.md
+    |-- styles.css
