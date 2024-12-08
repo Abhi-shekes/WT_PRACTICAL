@@ -3,7 +3,9 @@ import './App.css';
 import FacultyInfo from "./components/FacultyInfo";
 import VisionMission from "./components/VisionMission"
 import FeedbackForm from "./components/FeedbackForm"
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './Login';
+import Signup from './Signup';
 
 function App() {
   return (

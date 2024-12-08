@@ -1,0 +1,25 @@
+|-- .gitignore
+|-- README.md
+|-- eslint.config.js
+|-- index.html
+|-- package-lock.json
+|-- package.json
+|-- postcss.config.js
+|-- public
+|-- src
+    |-- App.css
+    |-- App.jsx
+    |-- assets
+    |-- components
+        |-- Alphabets.jsx
+        |-- BottomMenu.jsx
+        |-- Numbers.jsx
+    |-- index.css
+    |-- main.jsx
+    |-- pages
+        |-- Home.jsx
+        |-- Leaderboard.jsx
+        |-- Learning.jsx
+        |-- Profile.jsx
+|-- tailwind.config.js
+|-- vite.config.js
