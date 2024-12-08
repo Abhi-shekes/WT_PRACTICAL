@@ -9,17 +9,17 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <Router>
       <div className="App">
         <Routes>
-         (
-            <>
-              <Route path="/" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-            </>
-         
+
+          <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+          <Route path="/signup" element={<Signup />} />
+
+          {isLoggedIn && (
             <>
               <Route path="/home" element={<Home />} />
               <Route path="/learning/:type" element={<Learning />} />
@@ -27,13 +27,10 @@ function App() {
               <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="/profile" element={<Profile />} />
             </>
-          )
+          )}
         </Routes>
-        
-              <BottomMenu />
-            
-          
-        
+
+        {isLoggedIn && <BottomMenu />}
       </div>
     </Router>
   );

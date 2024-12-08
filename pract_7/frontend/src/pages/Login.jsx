@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({setIsLoggedIn}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -24,6 +24,7 @@ const Login = () => {
       
       setMessage('Login successful');
       navigate('/home');
+      setIsLoggedIn(true);
     } catch (error) {
       console.error("Error", error.response?.data);  
       setMessage(error.response ? error.response.data.error : 'Login failed');
