@@ -7,6 +7,8 @@ import Profile from './pages/Profile';
 import BottomMenu from './components/BottomMenu';
 import Login from './pages/Login'; 
 import Signup from './pages/Signup';
+import Video from './pages/Video';
+import Test from './pages/Test';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,6 +26,8 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/learning/:type" element={<Learning />} />
               <Route path="/learning" element={<Learning />} />
+              <Route path="/video" element={<Video />} />
+              <Route path="/test" element={<Test />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="/profile" element={<Profile />} />
             </>

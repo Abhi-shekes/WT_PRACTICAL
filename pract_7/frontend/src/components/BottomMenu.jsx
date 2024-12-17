@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaBook, FaTrophy, FaUser } from 'react-icons/fa';
+import { FaHome, FaBook, FaTrophy, FaUser, FaVideo, FaClipboardList } from 'react-icons/fa';
 
 const BottomMenu = () => {
   return (
@@ -13,6 +13,17 @@ const BottomMenu = () => {
         <FaBook className="text-xl" />
         <span className="text-xs">Learn</span>
       </Link>
+      
+      <Link to="/video" className="flex flex-col items-center text-gray-700 hover:text-blue-500">
+        <FaVideo className="text-xl" />
+        <span className="text-xs">Video</span>
+      </Link>
+
+      <Link to="/test" className="flex flex-col items-center text-gray-700 hover:text-blue-500">
+        <FaClipboardList className="text-xl" />
+        <span className="text-xs">Test</span>
+      </Link>
+
       <Link to="/leaderboard" className="flex flex-col items-center text-gray-700 hover:text-blue-500">
         <FaTrophy className="text-xl" />
         <span className="text-xs">Leaderboard</span>

@@ -1,0 +1,14 @@
+|-- .env
+|-- app.js
+|-- config
+    |-- config.js
+|-- db
+    |-- connection.js
+|-- models
+    |-- User.js
+|-- package-lock.json
+|-- package.json
+|-- routes
+    |-- userRoutes.js
+|-- services
+    |-- userService.js

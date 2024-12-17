@@ -17,20 +17,44 @@ const login = async (req, res) => {
 };
 
 
-
 const signup = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, name, age, grade } = req.body;
   
+  if (!email || !password || !name || !age || !grade) {
+    return res.status(400).json({ message: 'All fields are required' });
+  }
+
   const existingUser = await User.findOne({ email });
   if (existingUser) {
     return res.status(400).json({ message: 'User already exists' });
   }
   
-  const newUser = new User({ email, password });
+  const newUser = new User({ email, password, name, age, grade });
   await newUser.save();
   
   return res.status(201).json({ message: 'User created successfully' });
 };
 
 
-module.exports = { signup, login };
+
+
+const profile =  async (req, res) => {
+  const email = req.query.email;  
+
+  if (!email) {
+    return res.status(400).json({ message: 'Email is required' });
+  }
+
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json(user);  
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching user data', error: error.message });
+  }
+};
+
+
+module.exports = { signup, login , profile};

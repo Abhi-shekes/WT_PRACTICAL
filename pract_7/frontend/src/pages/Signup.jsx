@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [grade, setGrade] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -13,6 +16,9 @@ const Signup = () => {
 
     try {
       const response = await axios.post('http://localhost:5000/api/users/signup', {
+        name,
+        age,
+        grade,
         email,
         password,
       });
@@ -29,6 +35,39 @@ const Signup = () => {
       <div className="max-w-md w-full p-5 border rounded-lg shadow-lg bg-white">
         <h2 className="text-2xl font-semibold text-center mb-5">Signup</h2>
         <form onSubmit={handleSignup}>
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-gray-700">Name</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full mt-2 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="age" className="block text-gray-700">Age</label>
+            <input
+              type="number"
+              id="age"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+              className="w-full mt-2 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="grade" className="block text-gray-700">Grade</label>
+            <input
+              type="text"
+              id="grade"
+              value={grade}
+              onChange={(e) => setGrade(e.target.value)}
+              className="w-full mt-2 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700">Email</label>
             <input

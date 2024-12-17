@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Leaderboard = () => {
-  const leaderboardData = [
-    { rank: 1, name: 'Aarav Sharma', score: 95 },
-    { rank: 2, name: 'Isha Patel', score: 92 },
-    { rank: 3, name: 'Rohan Gupta', score: 89 },
-    { rank: 4, name: 'Priya Singh', score: 85 },
-    { rank: 5, name: 'Aditya Verma', score: 80 },
-    { rank: 6, name: 'Ananya Desai', score: 78 },
-    { rank: 7, name: 'Vikram Rao', score: 75 },
-    { rank: 8, name: 'Neha Mehta', score: 72 },
-    { rank: 9, name: 'Karan Joshi', score: 70 },
-    { rank: 10, name: 'Sanya Gupta', score: 68 },
-  ];
+  const [leaderboardData, setLeaderboardData] = useState([]);
 
+  useEffect(() => {
+    const fetchLeaderboard = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/leaderboard/table'); 
+        const data = await response.json();
+        console.log(data);
+        setLeaderboardData(data);
+      } catch (error) {
+        console.error('Error fetching leaderboard:', error);
+      }
+    };
+
+    fetchLeaderboard();
+  }, []);
 
   return (
     <div className="bg-gradient-to-r from-pink-400 to-purple-500 min-h-screen flex flex-col justify-between">

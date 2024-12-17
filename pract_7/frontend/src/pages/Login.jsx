@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Login = ({setIsLoggedIn}) => {
+const Login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -10,29 +10,36 @@ const Login = ({setIsLoggedIn}) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
-   
+  
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', {
-        email,
-        password,
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      
+      const response = await axios.post(
+        'http://localhost:5000/api/users/login',
+        { email, password },
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+  
       setMessage('Login successful');
-      navigate('/home');
       setIsLoggedIn(true);
+      
+      localStorage.setItem('userEmail', email);
+      
+      navigate('/home');
     } catch (error) {
-      console.error("Error", error.response?.data);  
-      setMessage(error.response ? error.response.data.error : 'Login failed');
+      const statusCode = error.response?.status;
+      const errorMessage = error.response?.data?.error || 'An error occurred during login';
+  
+      if (statusCode === 401) {
+        setMessage('Incorrect password. Please try again.');
+      } else if (statusCode === 404) {
+        setMessage('User not found. Please check your email.');
+      } else {
+        setMessage(errorMessage);
+      }
+  
+      console.error("Login Error:", errorMessage);
     }
-    
-    
   };
-
+  
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="max-w-md w-full p-5 border rounded-lg shadow-lg bg-white">
